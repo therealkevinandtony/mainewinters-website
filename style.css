@@ -40,6 +40,9 @@ body {
   color: var(--white);
   line-height: 1.6;
   overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
 }
 a { text-decoration: none; color: inherit; }
 ul { list-style: none; }
@@ -54,6 +57,8 @@ img { max-width: 100%; display: block; }
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
+  transform: translateZ(0);
+  -webkit-font-smoothing: antialiased;
 }
 
 /* ── BUTTONS ───────────────────────────────────── */
@@ -251,7 +256,7 @@ img { max-width: 100%; display: block; }
 .hero-headline {
   font-family: var(--font);
   font-size: clamp(3rem, 7vw, 5.2rem);
-  font-weight: 800;
+  font-weight: 700;
   line-height: 1.05;
   letter-spacing: -2px;
   margin-bottom: 20px;
