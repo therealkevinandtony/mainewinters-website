@@ -318,7 +318,7 @@ img { max-width: 100%; display: block; }
   margin-bottom: 12px;
 }
 .section-title {
-  font-family: var(--font);
+  font-family: var(--body);
   font-size: clamp(1.9rem, 3.5vw, 2.9rem);
   font-weight: 800;
   letter-spacing: -1px;
@@ -411,7 +411,7 @@ img { max-width: 100%; display: block; }
   font-weight: 500;
 }
 .product-name {
-  font-family: var(--font);
+  font-family: var(--body);
   font-size: 1.4rem;
   font-weight: 800;
   letter-spacing: -0.5px;
@@ -475,7 +475,7 @@ img { max-width: 100%; display: block; }
   gap: -4px;
 }
 .kt-teaser-left h3 {
-  font-family: var(--font);
+  font-family: var(--body);
   font-size: 1.1rem;
   font-weight: 700;
   margin-bottom: 4px;
@@ -573,7 +573,7 @@ img { max-width: 100%; display: block; }
   border-bottom: 1px solid var(--border);
 }
 .compare-icon { font-size: 1.3rem; }
-.compare-product strong { font-family: var(--font); font-size: 0.9rem; font-weight: 600; }
+.compare-product strong { font-family: var(--body); font-size: 0.9rem; font-weight: 700; }
 .compare-points { display: flex; flex-direction: column; gap: 10px; }
 .compare-points li { font-size: 0.84rem; color: var(--slate); }
 .compare-points .win { color: #6ee7b7; }
@@ -658,7 +658,7 @@ img { max-width: 100%; display: block; }
 }
 .cat-emoji { font-size: 3rem; }
 .cat-name {
-  font-family: var(--font);
+  font-family: var(--body);
   font-size: 1.2rem;
   font-weight: 800;
 }
@@ -689,7 +689,7 @@ img { max-width: 100%; display: block; }
   pointer-events: none;
 }
 .cta-headline {
-  font-family: var(--font);
+  font-family: var(--body);
   font-size: clamp(1.9rem, 3.5vw, 2.8rem);
   font-weight: 800;
   letter-spacing: -1px;
