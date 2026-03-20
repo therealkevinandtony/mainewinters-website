@@ -875,8 +875,29 @@ a.contact-option:hover { border-color: var(--border2); transform: translateX(4px
   display: flex;
   align-items: center;
   gap: 1rem;
-  margin-bottom: 2rem;
   flex-wrap: wrap;
+  cursor: pointer;
+  user-select: none;
+}
+.howto-body {
+  overflow: hidden;
+  max-height: 0;
+  transition: max-height 0.45s ease, padding 0.45s ease;
+}
+.howto-block.is-open .howto-body {
+  max-height: 2400px;
+  padding-top: 2rem;
+}
+.howto-chevron {
+  color: var(--slate);
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  transition: transform 0.3s ease, color 0.2s ease;
+}
+.howto-block.is-open .howto-chevron {
+  transform: rotate(180deg);
+  color: var(--violet3);
 }
 .howto-product-name {
   font-size: 1.25rem;

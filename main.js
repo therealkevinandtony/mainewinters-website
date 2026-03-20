@@ -81,6 +81,19 @@ if (form) {
   });
 }
 
+// ── How-to accordion ──────────────────────────────
+document.querySelectorAll('.howto-header').forEach(header => {
+  const toggle = () => {
+    const block = header.closest('.howto-block');
+    const isOpen = block.classList.toggle('is-open');
+    header.setAttribute('aria-expanded', isOpen);
+  };
+  header.addEventListener('click', toggle);
+  header.addEventListener('keydown', e => {
+    if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); toggle(); }
+  });
+});
+
 // ── Smooth nav link active state ──────────────────
 const sections = document.querySelectorAll('section[id]');
 const navAnchors = document.querySelectorAll('.nav-links a[href^="#"]');
