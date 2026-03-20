@@ -861,3 +861,108 @@ a.contact-option:hover { border-color: var(--border2); transform: translateX(4px
   .cta-buttons { flex-direction: column; align-items: center; }
   .footer-bottom { flex-direction: column; text-align: center; }
 }
+
+/* ── How To Use Section ────────────────────────────────── */
+.howto-block {
+  background: var(--surface-2);
+  border: 1px solid var(--border);
+  border-radius: 20px;
+  padding: 2.5rem;
+  margin-bottom: 2rem;
+}
+.howto-block:last-child { margin-bottom: 0; }
+.howto-header {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 2rem;
+  flex-wrap: wrap;
+}
+.howto-product-name {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin: 0 0 0.2rem;
+}
+.howto-product-sub {
+  font-size: 0.875rem;
+  color: var(--text-muted);
+  margin: 0;
+}
+.howto-steps {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  border-left: 2px solid var(--border);
+  margin-left: 18px;
+  padding-left: 0;
+}
+.howto-step {
+  display: flex;
+  gap: 1.25rem;
+  position: relative;
+  padding-bottom: 2rem;
+}
+.howto-step:last-child { padding-bottom: 0; }
+.howto-num {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: var(--brand);
+  color: #fff;
+  font-weight: 700;
+  font-size: 0.875rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  position: relative;
+  left: -19px;
+  margin-right: -19px;
+}
+.howto-step-body {
+  padding-top: 0.35rem;
+  flex: 1;
+}
+.howto-step-body h4 {
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin: 0 0 0.5rem;
+}
+.howto-step-body p {
+  font-size: 0.9rem;
+  color: var(--text-muted);
+  line-height: 1.7;
+  margin: 0 0 0.5rem;
+}
+.howto-step-body p:last-child { margin-bottom: 0; }
+.howto-list {
+  margin: 0.4rem 0 0.6rem 1.2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+}
+.howto-list li {
+  font-size: 0.875rem;
+  color: var(--text-muted);
+  line-height: 1.6;
+}
+.howto-list li strong { color: var(--text-secondary); }
+.howto-tip {
+  margin-top: 1.75rem;
+  padding: 0.9rem 1.1rem;
+  background: rgba(124, 58, 237, 0.08);
+  border: 1px solid rgba(124, 58, 237, 0.2);
+  border-radius: 10px;
+  font-size: 0.875rem;
+  color: var(--text-muted);
+  line-height: 1.6;
+}
+.howto-tip strong { color: var(--text-secondary); }
+
+@media (max-width: 600px) {
+  .howto-block { padding: 1.5rem; }
+  .howto-header { gap: 0.75rem; }
+  .howto-header .btn { width: 100%; text-align: center; }
+}
