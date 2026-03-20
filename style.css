@@ -269,6 +269,27 @@ img { max-width: 100%; display: block; }
   line-height: 1.7;
 }
 .hero-actions { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }
+.hero-anyone-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  margin-top: 18px;
+  font-size: 0.9rem;
+  color: var(--slate);
+  transition: color 0.2s ease;
+  text-decoration: none;
+}
+.hero-anyone-link:hover { color: #fb7185; }
+.hero-anyone-arrow {
+  opacity: 0;
+  transform: translateX(-4px);
+  transition: opacity 0.2s ease, transform 0.2s ease;
+  display: inline-block;
+}
+.hero-anyone-link:hover .hero-anyone-arrow {
+  opacity: 1;
+  transform: translateX(0);
+}
 
 /* Social proof strip */
 .proof-strip {
