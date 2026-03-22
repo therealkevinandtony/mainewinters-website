@@ -12,7 +12,7 @@
   <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png?v=3" />
   <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png?v=3" />
   <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png?v=3" />
-  <link rel="stylesheet" href="style.css?v=9" />
+  <link rel="stylesheet" href="style.css?v=10" />
 </head>
 <body>
 
@@ -592,60 +592,58 @@
           </div>
         </div>
         <div class="kt-visual">
-          <div class="kt-photo-stack">
-            <div class="kt-photo-card kt-photo-back">
-              <img src="cats/tony-04.jpg" alt="Tony the cat" loading="lazy" />
-              <div class="kt-photo-label">
-                <span class="kt-photo-name">Tony</span>
-                <span class="kt-photo-tag">Zero Fear. Zero Chill.</span>
-              </div>
-            </div>
-            <div class="kt-photo-card kt-photo-front">
+          <div class="kt-photo-pair">
+            <div class="kt-photo-card kt-photo-kevin">
               <img src="cats/kevin-06.jpg" alt="Kevin the cat" loading="lazy" />
               <div class="kt-photo-label">
                 <span class="kt-photo-name">Kevin</span>
                 <span class="kt-photo-tag">The Boss (Actually a Baby)</span>
               </div>
             </div>
+            <div class="kt-photo-card kt-photo-tony">
+              <img src="cats/tony-04.jpg" alt="Tony the cat" loading="lazy" />
+              <div class="kt-photo-label">
+                <span class="kt-photo-name">Tony</span>
+                <span class="kt-photo-tag">Zero Fear. Zero Chill.</span>
+              </div>
+            </div>
           </div>
         </div>
       </div>
 
-      <!-- Photo gallery -->
+      <!-- Photo gallery — all 19 photos, clickable lightbox -->
       <div class="kt-gallery">
         <div class="kt-gallery-grid">
-          <div class="kt-gal-item kt-gal-tall">
-            <img src="cats/kevin-03.jpg" alt="Kevin" loading="lazy" />
-          </div>
-          <div class="kt-gal-item">
-            <img src="cats/both-01.jpg" alt="Kevin and Tony" loading="lazy" />
-          </div>
-          <div class="kt-gal-item">
-            <img src="cats/tony-01.jpg" alt="Tony" loading="lazy" />
-          </div>
-          <div class="kt-gal-item kt-gal-wide">
-            <img src="cats/both-03.jpg" alt="Kevin and Tony together" loading="lazy" />
-          </div>
-          <div class="kt-gal-item">
-            <img src="cats/kevin-05.jpg" alt="Kevin" loading="lazy" />
-          </div>
-          <div class="kt-gal-item">
-            <img src="cats/tony-03.jpg" alt="Tony" loading="lazy" />
-          </div>
-          <div class="kt-gal-item">
-            <img src="cats/kevin-08.jpg" alt="Kevin" loading="lazy" />
-          </div>
-          <div class="kt-gal-item">
-            <img src="cats/tony-07.jpg" alt="Tony" loading="lazy" />
-          </div>
-          <div class="kt-gal-item">
-            <img src="cats/both-02.jpg" alt="Kevin and Tony" loading="lazy" />
-          </div>
+          <div class="kt-gal-item" onclick="openLightbox(this)"><img src="cats/kevin-01.jpg" alt="Kevin" loading="lazy" /></div>
+          <div class="kt-gal-item" onclick="openLightbox(this)"><img src="cats/tony-01.jpg" alt="Tony" loading="lazy" /></div>
+          <div class="kt-gal-item" onclick="openLightbox(this)"><img src="cats/both-01.jpg" alt="Kevin &amp; Tony" loading="lazy" /></div>
+          <div class="kt-gal-item" onclick="openLightbox(this)"><img src="cats/kevin-02.jpg" alt="Kevin" loading="lazy" /></div>
+          <div class="kt-gal-item" onclick="openLightbox(this)"><img src="cats/tony-02.jpg" alt="Tony" loading="lazy" /></div>
+          <div class="kt-gal-item" onclick="openLightbox(this)"><img src="cats/kevin-03.jpg" alt="Kevin" loading="lazy" /></div>
+          <div class="kt-gal-item" onclick="openLightbox(this)"><img src="cats/tony-03.jpg" alt="Tony" loading="lazy" /></div>
+          <div class="kt-gal-item" onclick="openLightbox(this)"><img src="cats/both-02.jpg" alt="Kevin &amp; Tony" loading="lazy" /></div>
+          <div class="kt-gal-item" onclick="openLightbox(this)"><img src="cats/kevin-04.jpg" alt="Kevin" loading="lazy" /></div>
+          <div class="kt-gal-item" onclick="openLightbox(this)"><img src="cats/tony-04.jpg" alt="Tony" loading="lazy" /></div>
+          <div class="kt-gal-item" onclick="openLightbox(this)"><img src="cats/kevin-05.jpg" alt="Kevin" loading="lazy" /></div>
+          <div class="kt-gal-item" onclick="openLightbox(this)"><img src="cats/tony-05.jpg" alt="Tony" loading="lazy" /></div>
+          <div class="kt-gal-item" onclick="openLightbox(this)"><img src="cats/both-03.jpg" alt="Kevin &amp; Tony" loading="lazy" /></div>
+          <div class="kt-gal-item" onclick="openLightbox(this)"><img src="cats/kevin-06.jpg" alt="Kevin" loading="lazy" /></div>
+          <div class="kt-gal-item" onclick="openLightbox(this)"><img src="cats/tony-06.jpg" alt="Tony" loading="lazy" /></div>
+          <div class="kt-gal-item" onclick="openLightbox(this)"><img src="cats/kevin-07.jpg" alt="Kevin" loading="lazy" /></div>
+          <div class="kt-gal-item" onclick="openLightbox(this)"><img src="cats/tony-07.jpg" alt="Tony" loading="lazy" /></div>
+          <div class="kt-gal-item" onclick="openLightbox(this)"><img src="cats/kevin-08.jpg" alt="Kevin" loading="lazy" /></div>
+          <div class="kt-gal-item" onclick="openLightbox(this)"><img src="cats/tony-08.jpg" alt="Tony" loading="lazy" /></div>
         </div>
       </div>
 
     </div>
   </section>
+
+  <!-- Lightbox -->
+  <div id="lightbox" class="lightbox" onclick="closeLightbox()">
+    <button class="lightbox-close" onclick="closeLightbox()">✕</button>
+    <img id="lightbox-img" src="" alt="" />
+  </div>
 
   <!-- CTA SECTION -->
   <section class="cta-section">

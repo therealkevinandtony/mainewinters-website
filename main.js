@@ -94,6 +94,22 @@ document.querySelectorAll('.howto-header').forEach(header => {
   });
 });
 
+// ── Lightbox ───────────────────────────────────────
+function openLightbox(el) {
+  const img = el.querySelector('img');
+  const lb = document.getElementById('lightbox');
+  const lbImg = document.getElementById('lightbox-img');
+  lbImg.src = img.src;
+  lbImg.alt = img.alt;
+  lb.classList.add('open');
+  document.body.style.overflow = 'hidden';
+}
+function closeLightbox() {
+  document.getElementById('lightbox').classList.remove('open');
+  document.body.style.overflow = '';
+}
+document.addEventListener('keydown', e => { if (e.key === 'Escape') closeLightbox(); });
+
 // ── Smooth nav link active state ──────────────────
 const sections = document.querySelectorAll('section[id]');
 const navAnchors = document.querySelectorAll('.nav-links a[href^="#"]');
