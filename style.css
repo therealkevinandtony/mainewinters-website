@@ -1,7 +1,7 @@
 /* ============================================
    MAINE WINTERS LLC — Website Styles v4
    Design: Maine Winter — Syne + Plus Jakarta Sans
-   Palette: dark navy-teal + ice blue (MW logo colors)
+   Palette: dark navy-teal + gold (MW logo colors)
    ============================================ */
 
 :root {
@@ -18,6 +18,9 @@
   --amber-glow: rgba(77,184,212,0.2);
   --pink:     #2aa8c4;
   --emerald:  #2ab5a0;
+  --gold:     #f59e0b;
+  --gold2:    #fbbf24;
+  --gold-glow: rgba(245,158,11,0.35);
   --white:    #eef6fa;
   --slate:    #7aafc4;
   --slate2:   #5a8fa8;
@@ -407,14 +410,14 @@ img { max-width: 100%; display: block; }
   justify-content: center;
   font-size: 1.5rem;
   flex-shrink: 0;
-  background: linear-gradient(135deg, #1d8aab, #2ab5c8, #4dd4e8);
+  background: linear-gradient(135deg, #f59e0b, #eab308);
   padding: 10px;
-  box-shadow: 0 4px 16px rgba(29,138,171,0.35);
+  box-shadow: 0 4px 16px rgba(245,158,11,0.35);
 }
-.product-icon--clips  { background: linear-gradient(135deg, #1d8aab, #2ab5c8, #4dd4e8); }
-.product-icon--sponsor { background: linear-gradient(135deg, #1d8aab, #2ab5c8, #4dd4e8); }
-.product-icon--cliphook { background: linear-gradient(135deg, #1d8aab, #2ab5c8, #4dd4e8); }
-.product-icon--stack  { background: linear-gradient(135deg, #1d8aab, #2ab5c8, #4dd4e8); }
+.product-icon--clips  { background: linear-gradient(135deg, #f59e0b, #eab308); }
+.product-icon--sponsor { background: linear-gradient(135deg, #f59e0b, #eab308); }
+.product-icon--cliphook { background: linear-gradient(135deg, #f59e0b, #eab308); }
+.product-icon--stack  { background: linear-gradient(135deg, #f59e0b, #eab308); }
 .product-meta { display: flex; flex-direction: column; align-items: flex-end; gap: 4px; }
 .product-status {
   font-size: 0.7rem;
