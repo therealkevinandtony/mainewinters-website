@@ -424,10 +424,10 @@ img { max-width: 100%; display: block; }
   padding: 10px;
   box-shadow: 0 4px 16px rgba(245,158,11,0.35);
 }
-.product-icon--clips  { background: linear-gradient(135deg, #1d8aab, #2ab5c8, #f59e0b); }
+.product-icon--clips  { background: linear-gradient(135deg, #f472b6, #fbbf24); box-shadow: 0 4px 16px rgba(251,191,36,0.4); }
 .product-icon--sponsor { background: linear-gradient(135deg, #1d8aab, #2ab5c8, #f59e0b); }
 .product-icon--cliphook { background: linear-gradient(135deg, #1d8aab, #2ab5c8, #f59e0b); }
-.product-icon--stack  { background: linear-gradient(135deg, #1d8aab, #2ab5c8, #f59e0b); }
+.product-icon--stack  { background: linear-gradient(135deg, #f472b6, #fbbf24); box-shadow: 0 4px 16px rgba(251,191,36,0.4); }
 .product-meta { display: flex; flex-direction: column; align-items: flex-end; gap: 4px; }
 .product-status {
   font-size: 0.7rem;
