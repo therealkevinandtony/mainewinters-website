@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Chrome Extensions — Maine Winters LLC</title>
+  <meta name="description" content="10 Chrome extensions built by Maine Winters LLC. Productivity, AI tools, tab management, price tracking, and more." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@600;700;800&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="icon" type="image/x-icon" href="/favicon.ico?v=3" />
+  <link rel="stylesheet" href="../style.css?v=10" />
+  <style>
+    .ext-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+      gap: 24px;
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+    .ext-card {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 14px;
+      padding: 32px 20px 28px;
+      background: #0d2130;
+      border: 1px solid rgba(109,205,232,0.10);
+      border-radius: 20px;
+      cursor: pointer;
+      text-decoration: none;
+      color: inherit;
+      transition: transform 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
+      text-align: center;
+    }
+    .ext-card:hover {
+      transform: translateY(-6px);
+      border-color: rgba(109,205,232,0.35);
+      box-shadow: 0 16px 48px rgba(0,0,0,0.4);
+    }
+    .ext-icon {
+      width: 88px;
+      height: 88px;
+      border-radius: 20px;
+      object-fit: contain;
+      background: #132d40;
+      padding: 8px;
+    }
+    .ext-name {
+      font-family: 'Syne', sans-serif;
+      font-weight: 700;
+      font-size: 1.05rem;
+      color: #eef6fa;
+    }
+    .ext-tagline {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-size: 0.78rem;
+      color: #7aafc4;
+      line-height: 1.4;
+    }
+    .ext-price {
+      font-family: 'Syne', sans-serif;
+      font-size: 0.78rem;
+      font-weight: 600;
+      color: #f59e0b;
+      background: rgba(245,158,11,0.1);
+      border: 1px solid rgba(245,158,11,0.2);
+      padding: 3px 10px;
+      border-radius: 20px;
+    }
+    @media (max-width: 600px) {
+      .ext-grid { grid-template-columns: repeat(2, 1fr); gap: 16px; }
+      .ext-icon { width: 64px; height: 64px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav class="nav" id="nav">
+    <div class="nav-inner">
+      <a href="/" class="nav-logo" style="font-size:0.95rem;">← Maine Winters</a>
+      <ul class="nav-links">
+        <li><a href="/#products">Products</a></li>
+        <li><a href="/#about">About</a></li>
+        <li><a href="/#contact">Contact</a></li>
+      </ul>
+      <div class="nav-actions">
+        <a href="mailto:hello@mainewinters.com?subject=Chrome Extensions" class="nav-cta">Get in Touch</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <section style="padding: 80px 24px 20px; text-align: center;">
+    <div style="display:inline-flex; align-items:center; gap:8px; background:rgba(77,184,212,0.08); border:1px solid rgba(77,184,212,0.2); border-radius:20px; padding:6px 16px; margin-bottom:24px;">
+      <span style="font-family:'Plus Jakarta Sans',sans-serif; font-size:0.8rem; color:#4db8d4; font-weight:600;">🧩 10 Extensions — Chrome Web Store</span>
+    </div>
+    <h1 style="font-family:'Syne',sans-serif; font-weight:800; font-size:clamp(2rem,5vw,3.2rem); color:#eef6fa; line-height:1.15; margin-bottom:16px;">
+      Chrome Extensions by<br/>
+      <span style="background:linear-gradient(135deg,#4dd4e8 0%,#1d8aab 45%,#f59e0b 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;">Maine Winters LLC</span>
+    </h1>
+    <p style="font-family:'Plus Jakarta Sans',sans-serif; font-size:1rem; color:#7aafc4; max-width:520px; margin:0 auto 60px; line-height:1.7;">
+      Productivity tools, AI utilities, and browser enhancements — built to make your day a little easier. Click any extension to learn more.
+    </p>
+  </section>
+
+  <!-- GRID -->
+  <section style="padding: 0 0 100px;">
+    <div class="ext-grid">
+
+      <a href="/quickfocus/" class="ext-card">
+        <img src="/extensions-icons/quickfocus.png" alt="QuickFocus" class="ext-icon" />
+        <div class="ext-name">QuickFocus</div>
+        <div class="ext-tagline">Your new tab, reimagined</div>
+        <div class="ext-price">$4.99 one-time</div>
+      </a>
+
+      <a href="/inspectcss/" class="ext-card">
+        <img src="/extensions-icons/inspectcss.png" alt="InspectCSS" class="ext-icon" />
+        <div class="ext-name">InspectCSS</div>
+        <div class="ext-tagline">Click any element. Get its CSS.</div>
+        <div class="ext-price">$19 one-time</div>
+      </a>
+
+      <a href="/pagesnap/" class="ext-card">
+        <img src="/extensions-icons/pagesnap.png" alt="PageSnap" class="ext-icon" />
+        <div class="ext-name">PageSnap</div>
+        <div class="ext-tagline">Screenshot, annotate, share</div>
+        <div class="ext-price">$1.99 / month</div>
+      </a>
+
+      <a href="/darksight/" class="ext-card">
+        <img src="/extensions-icons/darksight.png" alt="DarkSight" class="ext-icon" />
+        <div class="ext-name">DarkSight</div>
+        <div class="ext-tagline">Dark mode for every website</div>
+        <div class="ext-price">$1.99 / month</div>
+      </a>
+
+      <a href="/texttone/" class="ext-card">
+        <img src="/extensions-icons/texttone.png" alt="TextTone" class="ext-icon" />
+        <div class="ext-name">TextTone</div>
+        <div class="ext-tagline">Rewrite anything in 8 tones</div>
+        <div class="ext-price">$3.99 / month</div>
+      </a>
+
+      <a href="/summarizeai/" class="ext-card">
+        <img src="/extensions-icons/summarizeai.png" alt="SummarizeAI" class="ext-icon" />
+        <div class="ext-name">SummarizeAI</div>
+        <div class="ext-tagline">TL;DR any webpage instantly</div>
+        <div class="ext-price">$4.99 / month</div>
+      </a>
+
+      <a href="/tabflow/" class="ext-card">
+        <img src="/extensions-icons/tabflow.png" alt="TabFlow" class="ext-icon" />
+        <div class="ext-name">TabFlow</div>
+        <div class="ext-tagline">Tab management that works</div>
+        <div class="ext-price">$9.99 one-time</div>
+      </a>
+
+      <a href="/mailping/" class="ext-card">
+        <img src="/extensions-icons/mailping.png" alt="MailPing" class="ext-icon" />
+        <div class="ext-name">MailPing</div>
+        <div class="ext-tagline">Know when your emails open</div>
+        <div class="ext-price">$4.99 / month</div>
+      </a>
+
+      <a href="/pricewatch/" class="ext-card">
+        <img src="/extensions-icons/pricewatch.png" alt="PriceWatch" class="ext-icon" />
+        <div class="ext-name">PriceWatch</div>
+        <div class="ext-tagline">Never overpay again</div>
+        <div class="ext-price">$2.99 / month</div>
+      </a>
+
+      <a href="/linkedout/" class="ext-card">
+        <img src="/extensions-icons/linkedout.png" alt="LinkedOut" class="ext-icon" />
+        <div class="ext-name">LinkedOut</div>
+        <div class="ext-tagline">Export LinkedIn profiles to CSV</div>
+        <div class="ext-price">$9.99 one-time</div>
+      </a>
+
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer style="text-align:center; padding:40px 24px; border-top:1px solid rgba(109,205,232,0.08); color:#7aafc4; font-size:0.8rem; font-family:'Plus Jakarta Sans',sans-serif;">
+    <p>© 2026 Maine Winters LLC · <a href="/privacy.html" style="color:#4db8d4;">Privacy Policy</a> · <a href="mailto:hello@mainewinters.com" style="color:#4db8d4;">Support</a></p>
+  </footer>
+
+</body>
+</html>
