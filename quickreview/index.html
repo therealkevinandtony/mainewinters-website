@@ -3,90 +3,196 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>QuickReview — Stop reading 1,000 reviews. Get the verdict in 10 seconds.</title>
-  <meta name="description" content="AI-powered review summarizer for Amazon, Walmart, Best Buy and more. Score, verdict, pros/cons, and buy/skip recommendations. BYOK." />
+  <title>QuickReview — Stop reading reviews. Get the verdict in 10 seconds.</title>
+  <meta name="description" content="QuickReview reads hundreds of product reviews and gives you a clean score, pros, cons, and a buy/skip recommendation — powered by your own OpenAI key." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="../style.css" />
+  <link rel="icon" type="image/x-icon" href="/favicon.ico?v=3" />
+  <link rel="stylesheet" href="../style.css?v=10" />
+  <style>
+    .ext-section { padding: 80px 24px; }
+    .ext-section-alt { padding: 80px 24px; background: #0d2130; }
+    .ext-inner { max-width: 960px; margin: 0 auto; }
+    .feat-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 24px; margin-top: 48px; }
+    .feat-card { background: #132d40; border: 1px solid rgba(109,205,232,0.1); border-radius: 16px; padding: 28px 24px; }
+    .feat-icon { font-size: 2rem; margin-bottom: 14px; }
+    .feat-title { font-family: 'Syne', sans-serif; font-weight: 700; font-size: 1.05rem; color: #eef6fa; margin-bottom: 8px; }
+    .feat-desc { font-family: 'Plus Jakarta Sans', sans-serif; font-size: 0.875rem; color: #7aafc4; line-height: 1.6; }
+    .steps-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 24px; margin-top: 48px; }
+    .step { text-align: center; }
+    .step-num { width: 44px; height: 44px; border-radius: 50%; background: linear-gradient(135deg,#fbbf24 0%,#f59e0b 60%,#d97706 100%); display: flex; align-items: center; justify-content: center; font-family: 'Syne', sans-serif; font-weight: 800; font-size: 1.1rem; color: #fff; margin: 0 auto 16px; box-shadow: 0 4px 16px rgba(245,158,11,0.3); }
+    .step-title { font-family: 'Syne', sans-serif; font-weight: 700; font-size: 0.95rem; color: #eef6fa; margin-bottom: 8px; }
+    .step-desc { font-family: 'Plus Jakarta Sans', sans-serif; font-size: 0.83rem; color: #7aafc4; line-height: 1.5; }
+    .pricing-card { background: #132d40; border: 1px solid rgba(109,205,232,0.15); border-radius: 20px; padding: 40px; max-width: 480px; margin: 48px auto 0; text-align: center; }
+    .section-badge { display: inline-flex; align-items: center; gap: 8px; background: rgba(77,184,212,0.08); border: 1px solid rgba(77,184,212,0.2); border-radius: 20px; padding: 6px 16px; margin-bottom: 20px; font-family: 'Plus Jakarta Sans', sans-serif; font-size: 0.8rem; color: #4db8d4; font-weight: 600; }
+    .section-h2 { font-family: 'Syne', sans-serif; font-weight: 800; font-size: clamp(1.6rem, 4vw, 2.4rem); color: #eef6fa; margin-bottom: 16px; line-height: 1.2; }
+    .section-sub { font-family: 'Plus Jakarta Sans', sans-serif; font-size: 0.95rem; color: #7aafc4; line-height: 1.7; max-width: 560px; margin: 0 auto; }
+    .cta-primary { display: inline-flex; align-items: center; gap: 8px; font-family: 'Syne', sans-serif; font-weight: 700; background: linear-gradient(135deg,#fbbf24 0%,#f59e0b 60%,#d97706 100%); color: #fff; padding: 14px 32px; border-radius: 12px; font-size: 0.95rem; text-decoration: none; box-shadow: 0 6px 24px rgba(245,158,11,0.3); transition: opacity 0.2s; }
+    .cta-primary:hover { opacity: 0.88; }
+    .cta-ghost { display: inline-flex; align-items: center; gap: 8px; font-family: 'Syne', sans-serif; font-weight: 600; color: #4db8d4; border: 1px solid rgba(77,184,212,0.3); padding: 14px 28px; border-radius: 12px; font-size: 0.95rem; text-decoration: none; transition: border-color 0.2s, background 0.2s; margin-left: 12px; }
+    .cta-ghost:hover { border-color: rgba(77,184,212,0.6); background: rgba(77,184,212,0.06); }
+  </style>
 </head>
 <body>
 
-<nav style="padding:16px 24px; display:flex; align-items:center; justify-content:space-between; border-bottom:1px solid rgba(109,205,232,0.08); position:sticky; top:0; z-index:100; background:#08161f;">
-  <a href="/" style="font-family:'Syne',sans-serif; font-weight:700; color:#eef6fa; font-size:1rem;">← Maine Winters</a>
-  <a href="mailto:hello@mainewinters.com?subject=QuickReview" style="font-family:'Syne',sans-serif; font-weight:600; background:#f59e0b; color:#08161f; padding:8px 18px; border-radius:10px; font-size:0.85rem; text-decoration:none;">Add to Chrome — Free</a>
+<!-- NAV -->
+<nav class="nav" id="nav">
+  <div class="nav-inner">
+    <a href="/" class="nav-logo"><span>Maine</span><span style="color:var(--teal2)">Winters</span></a>
+    <ul class="nav-links">
+      <li><a href="/extensions/">All Extensions</a></li>
+      <li><a href="/#products">Products</a></li>
+      <li><a href="/#contact">Contact</a></li>
+    </ul>
+    <div class="nav-actions">
+      <a href="mailto:hello@mainewinters.com?subject=QuickReview Question" class="nav-cta">Add to Chrome — Free Trial</a>
+    </div>
+  </div>
 </nav>
 
-<section style="padding:80px 24px 60px; text-align:center; max-width:720px; margin:0 auto;">
-  <img src="icon.png" alt="logo" style="width:80px; height:80px; border-radius:18px; margin:0 auto 28px; display:block; object-fit:contain;" />
-
-  <h1 style="font-family:'Syne',sans-serif; font-weight:800; font-size:clamp(2rem,5vw,3rem); line-height:1.15; margin-bottom:16px; color:#eef6fa;">
-    Quick<span style="background:linear-gradient(135deg,#818cf8 0%,#6366f1 60%,#f59e0b 100%); -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text;">Review</span>
-  </h1>
-
-  <p style="font-family:'Syne',sans-serif; font-size:1.25rem; font-weight:600; color:#9ecbd8; margin-bottom:20px;">Stop reading 1,000 reviews. Get the verdict in 10 seconds.</p>
-
-  <p style="font-family:'Plus Jakarta Sans',sans-serif; color:#7aafc4; font-size:1rem; line-height:1.7; margin-bottom:32px;">2,847 reviews, 4.3 stars, and you still don't know if you should buy it. QuickReview reads them all and gives you a score, verdict, top pros/cons, and a buy/skip recommendation.</p>
-
-  <ul style="list-style:none; padding:0; margin:0 auto 40px; display:inline-flex; flex-direction:column; gap:12px; text-align:left; max-width:440px;">
-    <li style="display:flex; align-items:center; gap:12px; font-family:'Plus Jakarta Sans',sans-serif; color:#eef6fa; font-size:0.95rem;">
-      <span style="width:24px; height:24px; border-radius:50%; background:rgba(99,102,241,0.2); border:1px solid rgba(99,102,241,0.4); display:flex; align-items:center; justify-content:center; font-size:0.75rem; flex-shrink:0;">✓</span>
-      Score (1–10), verdict, top 3 pros & cons from real reviews
-    </li>
-    <li style="display:flex; align-items:center; gap:12px; font-family:'Plus Jakarta Sans',sans-serif; color:#eef6fa; font-size:0.95rem;">
-      <span style="width:24px; height:24px; border-radius:50%; background:rgba(99,102,241,0.2); border:1px solid rgba(99,102,241,0.4); display:flex; align-items:center; justify-content:center; font-size:0.75rem; flex-shrink:0;">✓</span>
-      "Buy if..." and "Skip if..." recommendations
-    </li>
-    <li style="display:flex; align-items:center; gap:12px; font-family:'Plus Jakarta Sans',sans-serif; color:#eef6fa; font-size:0.95rem;">
-      <span style="width:24px; height:24px; border-radius:50%; background:rgba(99,102,241,0.2); border:1px solid rgba(99,102,241,0.4); display:flex; align-items:center; justify-content:center; font-size:0.75rem; flex-shrink:0;">✓</span>
-      BYOK — ~$0.001 per summary, your key, your cost
-    </li>
-  </ul>
-
-  <a href="mailto:hello@mainewinters.com?subject=QuickReview" style="display:inline-flex; align-items:center; gap:8px; font-family:'Syne',sans-serif; font-weight:700; background:#f59e0b; color:#08161f; padding:14px 32px; border-radius:10px; font-size:1rem; text-decoration:none; box-shadow:0 4px 20px rgba(245,158,11,0.35);">
-    Add to Chrome — Free
-  </a>
-  <p style="font-family:'Plus Jakarta Sans',sans-serif; color:#7aafc4; font-size:0.8rem; margin-top:12px;">Chrome Extension · Free + Pro $2.99/month · BYOK</p>
-</section>
-
-<section style="padding:60px 24px; max-width:960px; margin:0 auto;">
-  <h2 style="font-family:'Syne',sans-serif; font-weight:700; font-size:1.75rem; text-align:center; color:#eef6fa; margin-bottom:48px;">Works on all the big stores.</h2>
-  <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(260px,1fr)); gap:24px;">
-
-    <div style="background:#0d2130; border:1px solid rgba(109,205,232,0.1); border-radius:14px; padding:28px 24px;">
-      <div style="font-size:2rem; margin-bottom:16px;">⚡</div>
-      <h3 style="font-family:'Syne',sans-serif; font-weight:700; font-size:1.05rem; color:#eef6fa; margin-bottom:10px;">Instant Summary</h3>
-      <p style="font-family:'Plus Jakarta Sans',sans-serif; color:#7aafc4; font-size:0.9rem; line-height:1.65;">Click "Summarize Reviews" on any product page. GPT-4o mini reads the reviews and returns a full breakdown in under 10 seconds.</p>
+<!-- HERO -->
+<section style="padding: 100px 24px 80px; text-align: center; background: #08161f; position: relative; overflow: hidden;">
+  <div style="position:absolute;inset:0;background:radial-gradient(ellipse 60% 40% at 50% 0%, rgba(245,158,11,0.3) 0%, transparent 70%);pointer-events:none;"></div>
+  <div style="position:relative;z-index:1;">
+    <div class="section-badge">🧩 Chrome Extension by Maine Winters LLC</div>
+    <div style="width:96px;height:96px;border-radius:24px;background:linear-gradient(135deg,#fbbf24 0%,#f59e0b 60%,#d97706 100%);display:flex;align-items:center;justify-content:center;margin:0 auto 28px;padding:12px;box-shadow:0 8px 40px rgba(245,158,11,0.3);">
+      <img src="icon.png" alt="QuickReview" style="width:100%;height:100%;object-fit:contain;" />
     </div>
+    <h1 class="section-h2" style="font-size:clamp(2.2rem,5vw,3.4rem);margin-bottom:16px;">
+      <span style="background:linear-gradient(135deg,#fbbf24 0%,#f59e0b 60%,#d97706 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;">QuickReview</span>
+    </h1>
+    <p style="font-family:'Syne',sans-serif;font-size:1.2rem;font-weight:600;color:#9ecbd8;margin-bottom:16px;">Stop reading reviews. Get the verdict in 10 seconds.</p>
+    <p class="section-sub" style="margin-bottom:40px;">QuickReview reads hundreds of product reviews and gives you a clean score, pros, cons, and a buy/skip recommendation — powered by your own OpenAI key.</p>
+    <ul style="list-style:none;padding:0;display:inline-flex;flex-direction:column;gap:12px;text-align:left;max-width:420px;margin:0 auto 44px;">
+      <li style="display:flex;align-items:flex-start;gap:12px;font-family:'Plus Jakarta Sans',sans-serif;color:#eef6fa;font-size:0.95rem;">
+        <span style="width:22px;height:22px;border-radius:50%;background:linear-gradient(135deg,#fbbf24 0%,#f59e0b 60%,#d97706 100%);display:flex;align-items:center;justify-content:center;font-size:0.7rem;flex-shrink:0;margin-top:2px;box-shadow:0 2px 8px rgba(245,158,11,0.3);">✓</span>
+        Overall score (1–10) + one-sentence verdict
+      </li>
+      <li style="display:flex;align-items:flex-start;gap:12px;font-family:'Plus Jakarta Sans',sans-serif;color:#eef6fa;font-size:0.95rem;">
+        <span style="width:22px;height:22px;border-radius:50%;background:linear-gradient(135deg,#fbbf24 0%,#f59e0b 60%,#d97706 100%);display:flex;align-items:center;justify-content:center;font-size:0.7rem;flex-shrink:0;margin-top:2px;box-shadow:0 2px 8px rgba(245,158,11,0.3);">✓</span>
+        Top pros and cons from real reviews
+      </li>
+      <li style="display:flex;align-items:flex-start;gap:12px;font-family:'Plus Jakarta Sans',sans-serif;color:#eef6fa;font-size:0.95rem;">
+        <span style="width:22px;height:22px;border-radius:50%;background:linear-gradient(135deg,#fbbf24 0%,#f59e0b 60%,#d97706 100%);display:flex;align-items:center;justify-content:center;font-size:0.7rem;flex-shrink:0;margin-top:2px;box-shadow:0 2px 8px rgba(245,158,11,0.3);">✓</span>
+        Buy if / Skip if recommendations
+      </li>
 
-    <div style="background:#0d2130; border:1px solid rgba(109,205,232,0.1); border-radius:14px; padding:28px 24px;">
-      <div style="font-size:2rem; margin-bottom:16px;">🎯</div>
-      <h3 style="font-family:'Syne',sans-serif; font-weight:700; font-size:1.05rem; color:#eef6fa; margin-bottom:10px;">Buy/Skip Verdict</h3>
-      <p style="font-family:'Plus Jakarta Sans',sans-serif; color:#7aafc4; font-size:0.9rem; line-height:1.65;">Not just a score — you get specific "Buy if you need X" and "Skip if you care about Y" guidance extracted from what real customers said.</p>
+    </ul>
+    <div>
+      <a href="mailto:hello@mainewinters.com?subject=QuickReview - Add to Chrome" class="cta-primary">Add to Chrome — Free Trial →</a>
+      <a href="/extensions/" class="cta-ghost">All Extensions</a>
     </div>
-
-    <div style="background:#0d2130; border:1px solid rgba(109,205,232,0.1); border-radius:14px; padding:28px 24px;">
-      <div style="font-size:2rem; margin-bottom:16px;">🔑</div>
-      <h3 style="font-family:'Syne',sans-serif; font-weight:700; font-size:1.05rem; color:#eef6fa; margin-bottom:10px;">Bring Your Own Key</h3>
-      <p style="font-family:'Plus Jakarta Sans',sans-serif; color:#7aafc4; font-size:0.9rem; line-height:1.65;">Add your OpenAI key once. Costs about $0.001 per summary. Your key stays on your device — we never see it, never bill you.</p>
-    </div>
-
+    <p style="font-family:'Plus Jakarta Sans',sans-serif;color:#4a7a90;font-size:0.8rem;margin-top:16px;">Chrome Extension · $2.99 / month · Free to try</p>
   </div>
 </section>
 
-<section style="padding:40px 24px 80px; max-width:480px; margin:0 auto; text-align:center;">
-  <div style="background:#0d2130; border:1px solid rgba(245,158,11,0.25); border-radius:14px; padding:40px 32px;">
-    <p style="font-family:'Syne',sans-serif; font-weight:600; color:#f59e0b; font-size:0.85rem; letter-spacing:0.08em; text-transform:uppercase; margin-bottom:12px;">Pricing</p>
-    <div style="font-family:'Syne',sans-serif; font-weight:800; font-size:3rem; color:#eef6fa; margin-bottom:4px;">Free</div>
-    <p style="font-family:'Plus Jakarta Sans',sans-serif; color:#9ecbd8; font-size:0.85rem; margin-bottom:4px;">5 summaries/month</p>
-    <p style="font-family:'Plus Jakarta Sans',sans-serif; color:#7aafc4; font-size:0.9rem; margin-bottom:28px;">Pro at $2.99/month · Unlimited summaries · BYOK</p>
-    <a href="mailto:hello@mainewinters.com?subject=QuickReview" style="display:inline-flex; align-items:center; justify-content:center; font-family:'Syne',sans-serif; font-weight:700; background:#f59e0b; color:#08161f; padding:13px 28px; border-radius:10px; font-size:0.95rem; text-decoration:none; width:100%;">Add to Chrome — Free</a>
+<!-- FEATURES -->
+<section class="ext-section-alt">
+  <div class="ext-inner" style="text-align:center;">
+    <div class="section-badge">Features</div>
+    <h2 class="section-h2">Everything you need. Nothing you don't.</h2>
+    <div class="feat-grid">
+      <div class="feat-card">
+        <div class="feat-icon">⭐</div>
+        <div class="feat-title">Instant Verdict</div>
+        <div class="feat-desc">Get an overall score, top pros, top cons, and a one-sentence verdict — no scrolling needed.</div>
+      </div>
+      <div class="feat-card">
+        <div class="feat-icon">🛒</div>
+        <div class="feat-title">Buy or Skip</div>
+        <div class="feat-desc">Clear 'Buy if...' and 'Skip if...' recommendations based on what real customers said.</div>
+      </div>
+      <div class="feat-card">
+        <div class="feat-icon">🔑</div>
+        <div class="feat-title">BYOK</div>
+        <div class="feat-desc">Uses your own OpenAI API key. Costs ~$0.001 per summary. We never bill you directly.</div>
+      </div>
+
+    </div>
   </div>
 </section>
 
-<footer style="text-align:center; padding:40px 24px; border-top:1px solid rgba(109,205,232,0.08); color:#7aafc4; font-size:0.8rem; font-family:'Plus Jakarta Sans',sans-serif;">
-  <p>© 2026 Maine Winters LLC · <a href="/privacy.html" style="color:#4db8d4;">Privacy Policy</a> · <a href="mailto:hello@mainewinters.com" style="color:#4db8d4;">Support</a></p>
+<!-- HOW IT WORKS -->
+<section class="ext-section">
+  <div class="ext-inner" style="text-align:center;">
+    <div class="section-badge">How It Works</div>
+    <h2 class="section-h2">Up and running in under a minute.</h2>
+    <div class="steps-grid">
+      <div class="step">
+        <div class="step-num">1</div>
+        <div class="step-title">Install &amp; add your API key</div>
+        <div class="step-desc">Enter your OpenAI key in settings.</div>
+      </div>
+      <div class="step">
+        <div class="step-num">2</div>
+        <div class="step-title">Visit any product page</div>
+        <div class="step-desc">QuickReview detects reviews automatically.</div>
+      </div>
+      <div class="step">
+        <div class="step-num">3</div>
+        <div class="step-title">Click Summarize Reviews</div>
+        <div class="step-desc">Get your verdict in 10 seconds.</div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- PRICING -->
+<section class="ext-section-alt">
+  <div class="ext-inner" style="text-align:center;">
+    <div class="section-badge">Pricing</div>
+    <h2 class="section-h2">Simple, honest pricing.</h2>
+    <p class="section-sub">Free to try. No credit card needed. Cancel anytime.</p>
+    <div class="pricing-card">
+      <div style="font-family:'Syne',sans-serif;font-size:0.8rem;font-weight:600;color:#4db8d4;text-transform:uppercase;letter-spacing:0.1em;margin-bottom:8px;">Pro Plan</div>
+      <div style="font-family:'Syne',sans-serif;font-weight:800;font-size:3rem;color:#eef6fa;line-height:1;margin-bottom:4px;">$2.99</div>
+      <div style="font-family:'Plus Jakarta Sans',sans-serif;font-size:0.85rem;color:#7aafc4;margin-bottom:28px;">/ month</div>
+      <ul style="list-style:none;padding:0;text-align:left;margin-bottom:32px;">
+        <li style="display:flex;align-items:center;gap:10px;font-family:'Plus Jakarta Sans',sans-serif;color:#eef6fa;font-size:0.88rem;padding:8px 0;border-bottom:1px solid rgba(109,205,232,0.06);">
+          <span style="color:#4db8d4;font-size:0.9rem;">✓</span> Unlimited review summaries
+        </li>
+        <li style="display:flex;align-items:center;gap:10px;font-family:'Plus Jakarta Sans',sans-serif;color:#eef6fa;font-size:0.88rem;padding:8px 0;border-bottom:1px solid rgba(109,205,232,0.06);">
+          <span style="color:#4db8d4;font-size:0.9rem;">✓</span> Score, pros &amp; cons
+        </li>
+        <li style="display:flex;align-items:center;gap:10px;font-family:'Plus Jakarta Sans',sans-serif;color:#eef6fa;font-size:0.88rem;padding:8px 0;border-bottom:1px solid rgba(109,205,232,0.06);">
+          <span style="color:#4db8d4;font-size:0.9rem;">✓</span> Buy/skip recommendation
+        </li>
+        <li style="display:flex;align-items:center;gap:10px;font-family:'Plus Jakarta Sans',sans-serif;color:#eef6fa;font-size:0.88rem;padding:8px 0;border-bottom:1px solid rgba(109,205,232,0.06);">
+          <span style="color:#4db8d4;font-size:0.9rem;">✓</span> Works on 8+ major retailers
+        </li>
+        <li style="display:flex;align-items:center;gap:10px;font-family:'Plus Jakarta Sans',sans-serif;color:#eef6fa;font-size:0.88rem;padding:8px 0;border-bottom:1px solid rgba(109,205,232,0.06);">
+          <span style="color:#4db8d4;font-size:0.9rem;">✓</span> BYOK — your API key
+        </li>
+
+      </ul>
+      <a href="mailto:hello@mainewinters.com?subject=QuickReview Pro" class="cta-primary" style="width:100%;justify-content:center;">Get QuickReview Pro</a>
+      <p style="font-family:'Plus Jakarta Sans',sans-serif;font-size:0.78rem;color:#4a7a90;margin-top:16px;">Free tier: 5 summaries/month</p>
+    </div>
+  </div>
+</section>
+
+<!-- CTA BANNER -->
+<section style="padding:80px 24px;background:linear-gradient(135deg,#0d2130 0%,#04111a 100%);text-align:center;">
+  <div style="max-width:600px;margin:0 auto;">
+    <h2 style="font-family:'Syne',sans-serif;font-weight:800;font-size:clamp(1.6rem,4vw,2.2rem);color:#eef6fa;margin-bottom:16px;">Ready to try QuickReview?</h2>
+    <p style="font-family:'Plus Jakarta Sans',sans-serif;color:#7aafc4;font-size:0.95rem;line-height:1.7;margin-bottom:32px;">Free to install. No account needed to get started.</p>
+    <a href="mailto:hello@mainewinters.com?subject=QuickReview - Add to Chrome" class="cta-primary">Add to Chrome — Free Trial →</a>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer style="text-align:center;padding:40px 24px;border-top:1px solid rgba(109,205,232,0.08);background:#04111a;color:#7aafc4;font-size:0.8rem;font-family:'Plus Jakarta Sans',sans-serif;">
+  <p style="margin-bottom:8px;">
+    <a href="/" style="color:#4db8d4;margin:0 12px;">Maine Winters LLC</a>
+    <a href="/extensions/" style="color:#4db8d4;margin:0 12px;">All Extensions</a>
+    <a href="/privacy.html" style="color:#4db8d4;margin:0 12px;">Privacy Policy</a>
+    <a href="mailto:hello@mainewinters.com" style="color:#4db8d4;margin:0 12px;">Support</a>
+  </p>
+  <p>© 2026 Maine Winters LLC</p>
 </footer>
 
+<script src="../main.js"></script>
 </body>
 </html>
